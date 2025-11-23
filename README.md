@@ -21,8 +21,8 @@ Before you begin, ensure you have **Python** installed on your machine. You will
 ## **📦 Installation**
 
 1. **Clone the repository:**  
-   git clone \[https://github.com/your-username/gemini-voice-assistant.git\](https://github.com/your-username/gemini-voice-assistant.git)  
-   cd gemini-voice-assistant
+   git clone [https://github.com/GuilhermeDuarteB/AIVoiceAssistant.git](https://github.com/GuilhermeDuarteB/AIVoiceAssistant.git)
+   cd AIVoiceAssistant
 
 2. Install dependencies:  
    Install the required libraries using pip:  
