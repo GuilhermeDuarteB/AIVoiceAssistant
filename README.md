@@ -22,9 +22,10 @@ Before you begin, ensure you have **Python** installed on your machine. You will
 
 1. **Clone the repository:**  
    git clone [https://github.com/GuilhermeDuarteB/AIVoiceAssistant.git](https://github.com/GuilhermeDuarteB/AIVoiceAssistant.git)
+   
    cd AIVoiceAssistant
 
-2. Install dependencies:  
+3. Install dependencies:  
    Install the required libraries using pip:  
    pip install google-generativeai pyttsx3 speechrecognition
 
