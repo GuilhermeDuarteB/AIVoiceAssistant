@@ -1,42 +1,45 @@
-# **🤖 Gemini AI Voice Assistant**
+# **🤖 Gemini AI Voice Assistant V2**
 
-A lightweight, intelligent virtual assistant written in Python that leverages the **Google Gemini API** to provide natural, context-aware, spoken responses.
+An advanced, intelligent virtual assistant written in Python that leverages the **Google Gemini API**. This version introduces a **Graphical User Interface (GUI)**, **Conversation Memory**, and Dual-Mode operation (Terminal or App).
 
-The assistant is capable of conversing in multiple languages (adapting to the user's input), telling the time, and providing concise answers using Text-to-Speech synthesis.
+The assistant remembers context from previous interactions, supports Dark/Light themes, and provides natural, spoken responses.
 
-## **✨ Features**
+## **✨ New Features in V2**
 
-* 🧠 **Artificial Intelligence:** Powered by the Gemini Flash model for fast and intelligent responses.  
-* 🗣️ **Text-to-Speech (TTS):** Vocalizes responses using the pyttsx3 library.  
+* 💻 **GUI App Mode:** A modern, clean interface built with Tkinter featuring a chat-like experience.  
+* 🌗 **Dark/Light Themes:** Toggle between Light and Dark modes instantly within the App.  
+* 🧠 **Contextual Memory:** The assistant now remembers the last **15 interactions** using a JSON database, allowing for continuous and contextual conversations.  
+* 🔄 **Dual Operation:** Choose between **Terminal Mode** (classic) or **App Mode** (GUI) upon startup.
+
+### **Core Features**
+
+* 🗣️ **Text-to-Speech (TTS):** Vocalizes responses using pyttsx3.  
 * 🌍 **Multilingual:** Automatically detects the language of your query and responds in the same language.  
-* ⏰ **Dynamic Greeting:** Wishes "Good Morning," "Good Afternoon," or "Good Evening" based on the current system time.  
-* ⚡ **Concise Responses:** System prompts are engineered to keep answers short (max \~50 words) and direct, optimized for voice interaction.
+* ⚡ **Concise Responses:** Optimized system prompts for short, conversational answers.
 
 ## **🛠️ Prerequisites**
 
-Before you begin, ensure you have **Python** installed on your machine. You will also need a Google Gemini **API Key**.
+Before you begin, ensure you have **Python** installed. You will also need a Google Gemini **API Key**.
 
 1. Get your free API Key at [Google AI Studio](https://aistudio.google.com/).
 
 ## **📦 Installation**
 
 1. **Clone the repository:**  
-   git clone \[https://github.com/your-username/gemini-voice-assistant.git\](https://github.com/your-username/gemini-voice-assistant.git)  
-   cd gemini-voice-assistant
+   git clone \[https://github.com/GuilhermeDuarteB/AIVoiceAssistant.git\](https://github.com/GuilhermeDuarteB/AIVoiceAssistant.git)  
+   cd AIVoiceAssistant
 
-2. Install dependencies:  
-   Install the required libraries using pip:  
+2. **Install dependencies:**  
    pip install google-generativeai pyttsx3 speechrecognition
+
+   *(Note: tkinter, json, and os are standard Python libraries and usually do not require installation).*
 
 ## **⚙️ Configuration**
 
-1. Open the main.py file.  
+1. Open main.py.  
 2. Locate the api\_key variable.  
-3. Replace the placeholder text with your actual API key:  
-   \# In main.py  
-   api\_key \= "YOUR\_ACTUAL\_API\_KEY\_HERE"
-
-⚠️ **Security Warning:** Never commit your API Key to GitHub. If you plan to make this repository public, consider using environment variables (os.environ) or a .env file to handle secrets.
+3. Replace the placeholder with your actual API key:  
+   api\_key \= "your\_google\_gemini\_api\_key\_here"
 
 ## **🚀 Usage**
 
@@ -44,29 +47,34 @@ Run the script via terminal:
 
 python main.py
 
-### **Example Commands:**
+### **Choosing a Mode**
 
-The assistant accepts text input (via keyboard) and responds with voice.
+When you run the script, you will be asked:
 
-* **You:** "What time is it?"  
-  * **Assistant:** "The time is 14:30."  
-* **You:** "How do I make an omelet?"  
-  * **Assistant:** (Responds with a quick summary recipe)  
-* **You:** "Exit" or "Quit"  
-  * **Assistant:** "Goodbye\! Have a great day\!"
+*"How do you want to interact with me? Terminal or APP?"*
+
+1. **Type app**: Launches the Graphical Interface with buttons and chat history.  
+2. **Type terminal**: Runs the classic command-line interface.
+
+### **Example Interaction (Memory Test):**
+
+* **You:** "My name is Guilherme."  
+* **Assistant:** "Nice to meet you, Guilherme."  
+* **You:** "What is my name?"  
+* **Assistant:** "Your name is Guilherme." *(The AI remembers context from the JSON memory file)*.
 
 ## **📂 Code Structure**
 
-* speak(text): Initializes the TTS engine and vocalizes the provided text.  
-* ai\_ask(prompt): Sends the user prompt to Google Gemini with system instructions (short, polite answers) and returns cleaned text.  
-* wish\_user(): Checks the system time to provide the appropriate greeting.  
-* run\_assistant(): The main loop that keeps the conversation active until an exit command is received.
+* **app\_mode()**: Handles the GUI setup, themes (Light/Dark), and event listeners for the windowed application.  
+* **load\_memory() / save\_memory()**: Manages the memory.json file to store and retrieve conversation history.  
+* **ai\_ask(prompt)**: Sends the prompt \+ **conversation history** to Gemini to generate context-aware responses.  
+* **speak(text)**: Handles text-to-speech output.
 
 ## **🔮 Roadmap**
 
-* \[ \] **Voice Input Activation:** The code already imports speech\_recognition. The next step is to replace input() with microphone listening logic.  
-* \[ \] **System Commands:** Add capabilities to open specific websites (YouTube, Google) or applications.  
-* \[ \] **Conversation Memory:** Allow the assistant to remember context from previous questions.
+* \[ \] **Voice Input for GUI:** Add a microphone button to the App interface.  
+* \[ \] **Executable Build:** Create a .exe file using PyInstaller for easier distribution.  
+* \[ \] **Custom Themes:** Allow users to define custom color palettes in a config file.
 
 ## **🤝 Contribution**
 
