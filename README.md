@@ -38,8 +38,11 @@ Before you begin, ensure you have **Python** installed. You will also need a Goo
 
 1. Open main.py.  
 2. Locate the api\_key variable.  
-3. Replace the placeholder with your actual API key:  
-   api\_key \= "your\_google\_gemini\_api\_key\_here"
+3. Replace the placeholder text with your actual API key:  
+   \# In main.py  
+   api_key = "your_google_gemini_api_key_here"
+
+⚠️ **Security Warning:** Never commit your API Key to GitHub. If you plan to make this repository public, consider using environment variables (os.environ) or a .env file to handle secrets.
 
 ## **🚀 Usage**
 
